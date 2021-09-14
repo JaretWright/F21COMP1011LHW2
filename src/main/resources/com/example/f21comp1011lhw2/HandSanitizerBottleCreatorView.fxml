@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lhw2.HandSanitizerBottlerCreatorViewController">
+   <children>
+      <GridPane layoutX="200.0" layoutY="97.0" prefHeight="210.0" prefWidth="268.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+          <ColumnConstraints minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Company" />
+            <Label text="Brand Name" GridPane.rowIndex="1" />
+            <Label text="Volume Of Bottle" GridPane.rowIndex="2" />
+            <Label text="Alcohol Percentage" GridPane.rowIndex="3" />
+            <TextField fx:id="companyTextField" GridPane.columnIndex="1" />
+            <TextField fx:id="brandTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Spinner fx:id="volumeSpinner" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Slider fx:id="alcoholSlider" prefHeight="14.0" prefWidth="119.0" />
+                  <Label fx:id="sliderLabel" text="Label" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox layoutX="224.0" layoutY="313.0" spacing="15.0">
+         <children>
+            <CheckBox fx:id="scentedCheckBox" mnemonicParsing="false" text="Scented" />
+            <CheckBox fx:id="pumpBottleCheckBox" mnemonicParsing="false" text="Pump Bottle" />
+            <CheckBox fx:id="refillableCheckBox" mnemonicParsing="false" text="Refillable" />
+         </children>
+      </HBox>
+      <Button fx:id="submitButton" layoutX="400.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitButtonPushed" text="Submit" />
+   </children>
+</AnchorPane>
