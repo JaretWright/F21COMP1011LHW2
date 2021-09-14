@@ -50,5 +50,6 @@
          </children>
       </HBox>
       <Button fx:id="submitButton" layoutX="400.0" layoutY="384.0" mnemonicParsing="false" onAction="#submitButtonPushed" text="Submit" />
+      <Label fx:id="createdObjectLabel" layoutX="306.0" layoutY="482.0" text="Label" />
    </children>
 </AnchorPane>

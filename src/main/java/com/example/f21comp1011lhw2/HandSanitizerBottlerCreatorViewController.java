@@ -37,17 +37,35 @@ public class HandSanitizerBottlerCreatorViewController implements Initializable 
     @FXML
     private Button submitButton;
 
+
+    @FXML
+    private Label createdObjectLabel;
+
     @FXML
     private void submitButtonPushed()
     {
         String company = companyTextField.getText();
         String brand = brandTextField.getText();
+        boolean refillable = refillableCheckBox.isSelected();
+        boolean pumpBottle = pumpBottleCheckBox.isSelected();
+        boolean scented = scentedCheckBox.isSelected();
+        float alcohol = 40;
+        int volumeOfBottle = 500;
 
-        System.out.printf("Company: %s, Brand: %s%n", company, brand);
+        try{
+            HandSanitizerBottle hsb = new HandSanitizerBottle(company,brand,scented,volumeOfBottle,alcohol,pumpBottle,refillable);
+
+            createdObjectLabel.setText(hsb.toString());
+        } catch (Exception e)
+        {
+            createdObjectLabel.setText(e.getMessage());
+        }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        submitButton.setDisable(true);
+//        submitButton.setDisable(true);
+        createdObjectLabel.setText("");
     }
 }

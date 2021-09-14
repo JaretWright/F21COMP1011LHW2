@@ -23,7 +23,10 @@ public class HandSanitizerBottle {
     }
 
     public void setCompany(String company) {
-        this.company = company;
+        if (!company.isBlank())
+            this.company = company;
+        else
+            throw new IllegalArgumentException("Company cannot be blank");
     }
 
     public String getBrandName() {
